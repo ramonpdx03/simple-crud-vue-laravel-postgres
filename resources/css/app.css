@@ -1,7 +1,104 @@
+@import 'reset.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import 'reset.css';
+:root {
+    --bg-primary: #020617;
+    --bg-secondary: #1E293B;
+    --pop: #0369A1;
+    --text: #F8FAFC;
+    --text-secondary: #94A3B8;
+    --border: #94A3B866
+}
 
+html, body {
+    @apply w-screen h-screen text-[--text] bg-[--bg-primary] text-sm md:!text-base;
+    font-family: "Inconsolata", monospace;
+}
 
+#app {
+    @apply w-full rounded-3xl bg-[--bg-secondary] p-4 md:max-w-[640px] md:!p-6 lg:max-w-[768px] xl:max-w-[1024px] 2xl:max-w-[1280px];
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar { /* Width */
+    @apply w-2 h-2;
+}
+::-webkit-scrollbar-track { /* Track */
+    @apply bg-transparent
+}
+::-webkit-scrollbar-thumb { /* Handle */
+    @apply bg-[#F8FAFC33] rounded;
+}
+::-webkit-scrollbar-thumb:hover { /* Handle on hover */
+    @apply bg-[#F8FAFC4D] rounded;
+}
+
+/* TYPOGRAPHY */
+h1 { @apply text-4xl font-bold; }
+h2 { @apply text-3xl font-bold; }
+h3 { @apply text-xl font-bold; }
+h4 { @apply text-xl font-semibold; }
+h5 { @apply text-xl text-[--text-secondary]; }
+
+/* INPUTS */
+input:not([type="checkbox"]) {
+    @apply !bg-[#0206171A] !border !border-[#02061780] !rounded !py-1.5 !px-2.5;
+}
+
+input:not([type="checkbox"]):focus {
+    @apply !border !border-[--pop] !outline-none !ring-offset-0 !ring-0;
+}
+
+input:not([type="checkbox"])::placeholder {
+    @apply text-[--text-secondary];
+}
+
+/* SWITCH */
+.switch {
+    @apply flex items-center flex-wrap h-6 w-12 px-0.5 rounded-full border-2 border-solid border-[--pop] cursor-pointer;
+}
+
+.switch:has(input:checked) {
+    @apply bg-[--pop];
+}
+
+.switch::before {
+    @apply content-[''] w-4 h-4 bg-[--text] rounded-full ml-0;
+}
+
+.switch:has(input:checked)::before {
+    @apply ml-auto;
+}
+
+/* BUTTON */
+button {
+    @apply !bg-[--pop] !rounded !py-1.5 !px-2.5 font-bold;
+}
+
+/* TABLE */
+.wrapper-table {
+    @apply border border-solid border-[--border] rounded overflow-auto whitespace-nowrap;
+}
+
+table {
+    @apply w-full min-w-[500px];
+}
+
+th {
+    @apply bg-[#02061733] font-bold;
+}
+
+th, td {
+    @apply py-2.5 px-3 text-center;
+}
+
+tr:not(:last-child) {
+    @apply border-b border-solid border-[--border];
+}
+
+th:not(:last-child), td:not(:last-child) {
+    @apply border-r border-solid border-[--border];
+}
