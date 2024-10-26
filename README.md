@@ -2,7 +2,7 @@
 
 <div align="center">
     <p>Um sistema simplificado de cadastro e venda de produtos.</p>
-    <p>Desenvolvido com o foco em expandir minhas habilidades!</p>
+    <p>Desenvolvido com o foco em aprimorar minhas habilidades!</p>
     <p>Ferramentas utilizadas:</p>
     <img src="https://skillicons.dev/icons?i=vue,laravel,postgres"/>
 </div>
