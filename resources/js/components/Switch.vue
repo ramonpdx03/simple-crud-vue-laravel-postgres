@@ -1,7 +1,8 @@
 <script setup>
+    import { ref } from 'vue';
+
     defineProps({
         id: {
-            type: String,
             required: true
         },
         defaultChecked: {
@@ -9,12 +10,14 @@
             default: false
         }
     });
+
+    const checked = defineModel();
 </script>
 
 <template>
     <div class="absolute flex justify-center w-full">
         <label :for="`switch-${id}`" class="switch">
-            <input type="checkbox" :id="`switch-${id}`" class="hidden" :checked="defaultChecked" />
+            <input type="checkbox" :id="`switch-${id}`" class="hidden" v-model="checked" :checked="defaultChecked" />
         </label>
     </div>
 </template>
