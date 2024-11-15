@@ -1,3 +1,7 @@
+import { ref } from "vue";
+
+export const isLoading = ref(false);
+
 export function formatMoney(money, showSymbol = true) {
     if (!money) return '';
 

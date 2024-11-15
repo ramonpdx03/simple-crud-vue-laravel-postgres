@@ -10,7 +10,9 @@ use Inertia\Inertia;
 class SimpleCrudController extends Controller
 {
     public function index() {
-        $produtos = Produto::orderBy('disponivel', 'desc')->get();
+        $produtos = Produto::orderBy('disponivel', 'desc')
+            ->orderBy('nome', 'asc')
+            ->get();
 
         return Inertia::render('SimpleCrud/index', [
             'produtos' => $produtos
